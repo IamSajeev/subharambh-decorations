@@ -1,30 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 140">
   <defs>
-    <linearGradient id="goldLinear" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#8B7355;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#C9A961;stop-opacity:1" />
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E6D5B8;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#AA8C2C;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="darkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5C4033;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3E2723;stop-opacity:1" />
     </linearGradient>
   </defs>
   
-  <!-- Clean rectangle background with subtle gradient -->
-  <rect x="5" y="5" width="210" height="90" rx="10" fill="#F5F5F0" stroke="#8B7355" stroke-width="1.5"/>
+  <!-- Outer elegant border -->
+  <rect x="10" y="10" width="260" height="120" rx="15" fill="none" stroke="url(#goldGrad)" stroke-width="2.5"/>
+  <rect x="12" y="12" width="256" height="116" rx="14" fill="#FEFDFB"/>
   
-  <!-- Decorative left accent line -->
-  <line x1="20" y1="20" x2="20" y2="80" stroke="url(#goldLinear)" stroke-width="3" stroke-linecap="round"/>
+  <!-- Left Royal Icon - Decorative Crown Shape -->
+  <g>
+    <!-- Crown base -->
+    <rect x="25" y="55" width="55" height="8" fill="url(#goldGrad)" rx="2"/>
+    
+    <!-- Left peak -->
+    <path d="M 35 55 L 30 35 L 40 45 Z" fill="url(#goldGrad)"/>
+    <circle cx="30" cy="33" r="4" fill="url(#goldGrad)" stroke="#3E2723" stroke-width="1"/>
+    
+    <!-- Center peak (tallest) -->
+    <path d="M 52.5 55 L 48 25 L 57 45 Z" fill="url(#goldGrad)"/>
+    <circle cx="48" cy="23" r="5" fill="url(#goldGrad)" stroke="#3E2723" stroke-width="1"/>
+    
+    <!-- Right peak -->
+    <path d="M 70 55 L 75 35 L 65 45 Z" fill="url(#goldGrad)"/>
+    <circle cx="75" cy="33" r="4" fill="url(#goldGrad)" stroke="#3E2723" stroke-width="1"/>
+    
+    <!-- Jewel ornaments on base -->
+    <circle cx="35" cy="59" r="2.5" fill="#3E2723"/>
+    <circle cx="52.5" cy="59" r="3" fill="#3E2723"/>
+    <circle cx="70" cy="59" r="2.5" fill="#3E2723"/>
+  </g>
   
-  <!-- Main Company Name -->
-  <text x="50" y="50" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="#2D2D2D" letter-spacing="0.5">
+  <!-- Center Text - Company Name -->
+  <text x="140" y="62" font-family="Georgia, serif" font-size="38" font-weight="bold" text-anchor="middle" fill="#3E2723" letter-spacing="1">
     SUBHARAMBH
   </text>
   
   <!-- Subtitle -->
-  <text x="50" y="72" font-family="Georgia, serif" font-size="12" fill="#8B7355" letter-spacing="2">
-    CELEBRATIONS
+  <text x="140" y="95" font-family="Georgia, serif" font-size="13" text-anchor="middle" fill="#AA8C2C" letter-spacing="3" font-weight="600">
+    DECORATIONS & EVENTS
   </text>
   
-  <!-- Decorative corner dots -->
-  <circle cx="190" cy="18" r="2.5" fill="url(#goldLinear)"/>
-  <circle cx="200" cy="18" r="2.5" fill="url(#goldLinear)"/>
-  <circle cx="190" cy="82" r="2.5" fill="url(#goldLinear)"/>
-  <circle cx="200" cy="82" r="2.5" fill="url(#goldLinear)"/>
+  <!-- Right Decorative Floral Symbol -->
+  <g>
+    <!-- Flower petals -->
+    <ellipse cx="240" cy="45" rx="8" ry="14" fill="url(#goldGrad)" opacity="0.9"/>
+    <ellipse cx="240" cy="45" rx="8" ry="14" fill="url(#goldGrad)" opacity="0.9" transform="rotate(60 240 45)"/>
+    <ellipse cx="240" cy="45" rx="8" ry="14" fill="url(#goldGrad)" opacity="0.9" transform="rotate(120 240 45)"/>
+    <ellipse cx="240" cy="45" rx="8" ry="14" fill="url(#goldGrad)" opacity="0.9" transform="rotate(180 240 45)"/>
+    <ellipse cx="240" cy="45" rx="8" ry="14" fill="url(#goldGrad)" opacity="0.9" transform="rotate(240 240 45)"/>
+    <ellipse cx="240" cy="45" rx="8" ry="14" fill="url(#goldGrad)" opacity="0.9" transform="rotate(300 240 45)"/>
+    
+    <!-- Center circle -->
+    <circle cx="240" cy="45" r="7" fill="url(#darkGrad)" stroke="url(#goldGrad)" stroke-width="1.5"/>
+    
+    <!-- Decorative dots around -->
+    <circle cx="245" cy="65" r="2" fill="url(#goldGrad)"/>
+    <circle cx="235" cy="65" r="2" fill="url(#goldGrad)"/>
+  </g>
+  
+  <!-- Bottom decorative line -->
+  <line x1="50" y1="115" x2="230" y2="115" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.6"/>
 </svg>
