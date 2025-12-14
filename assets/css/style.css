@@ -104,9 +104,9 @@ body {
 }
 
 .logo-img {
-    height: 50px;
+    height: 70px;
     width: auto;
-    filter: drop-shadow(0 0 8px rgba(255, 20, 147, 0.4));
+    filter: drop-shadow(0 0 8px rgba(255, 20, 147, 0.2));
     transition: all 0.3s ease;
 }
 
