@@ -55,11 +55,27 @@ body {
     align-items: center;
 }
 
-.logo {
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.logo-text {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--dark);
-    text-decoration: none;
     letter-spacing: -0.5px;
 }
 
