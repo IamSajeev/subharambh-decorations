@@ -20,61 +20,87 @@
     <header class="header">
         <div class="container">
             <div class="logo-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 120" class="logo-img" style="height: 75px; width: auto;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 100" class="logo-img" style="height: 75px; width: auto;">
                     <defs>
-                        <linearGradient id="bluegold" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#1a3a7a;stop-opacity:1" />
+                        <radialGradient id="goldGrad" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
-                        </linearGradient>
+                        </radialGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
                         <style>
-                            @keyframes pulse {
-                                0%, 100% { transform: scale(1); }
-                                50% { transform: scale(1.1); }
+                            @keyframes burst {
+                                0% { r: 15px; opacity: 1; }
+                                100% { r: 45px; opacity: 0; }
                             }
-                            @keyframes rotate {
+                            @keyframes spin {
                                 0% { transform: rotate(0deg); }
                                 100% { transform: rotate(360deg); }
                             }
-                            @keyframes shimmer {
-                                0%, 100% { opacity: 0.8; }
+                            @keyframes floatBurst {
+                                0%, 100% { opacity: 0.3; }
                                 50% { opacity: 1; }
                             }
-                            .logo-main { animation: pulse 2s infinite; }
-                            .logo-ring { animation: rotate 4s linear infinite; }
-                            .logo-glow { animation: shimmer 1.5s infinite; }
+                            .firework-burst { animation: burst 1.2s ease-out infinite; }
+                            .logo-icon { animation: spin 8s linear infinite; }
+                            .spark { animation: floatBurst 2s ease-in-out infinite; }
                         </style>
                     </defs>
                     
-                    <!-- Fireworks background circles -->
-                    <g class="logo-glow" opacity="0.6">
-                        <circle cx="30" cy="30" r="15" fill="#D4AF37" opacity="0.3"/>
-                        <circle cx="220" cy="30" r="15" fill="#D4AF37" opacity="0.3"/>
-                        <circle cx="30" cy="90" r="15" fill="#D4AF37" opacity="0.3"/>
-                        <circle cx="220" cy="90" r="15" fill="#D4AF37" opacity="0.3"/>
+                    <!-- Fireworks effect bursts at corners -->
+                    <g class="spark" opacity="0.5">
+                        <circle cx="20" cy="20" r="3" fill="#D4AF37"/>
+                        <circle cx="260" cy="20" r="3" fill="#D4AF37"/>
+                        <circle cx="20" cy="80" r="3" fill="#D4AF37"/>
+                        <circle cx="260" cy="80" r="3" fill="#D4AF37"/>
                     </g>
                     
-                    <!-- Decorative ring -->
-                    <circle cx="125" cy="60" r="55" fill="none" stroke="url(#bluegold)" stroke-width="3" class="logo-ring"/>
-                    
-                    <!-- Main logo shape with animation -->
-                    <g class="logo-main">
-                        <!-- Background circle -->
-                        <circle cx="125" cy="60" r="50" fill="#1a3a7a"/>
-                        <circle cx="125" cy="60" r="48" fill="#0d2550"/>
+                    <!-- Main Logo Icon - Bold Peacock/Sun inspired -->
+                    <g class="logo-icon" transform="translate(50, 50)">
+                        <!-- Main body circle -->
+                        <circle cx="0" cy="0" r="28" fill="#1a3a7a" filter="url(#glow)"/>
                         
-                        <!-- Gold accent circle -->
-                        <circle cx="125" cy="60" r="45" fill="none" stroke="#D4AF37" stroke-width="2"/>
+                        <!-- Decorative petals/rays - 8 pointed star design -->
+                        <g fill="url(#goldGrad)">
+                            <!-- Top -->
+                            <polygon points="0,-28 -6,-15 6,-15" />
+                            <!-- Top-right -->
+                            <polygon points="20,-20 11,-9 14,-2" />
+                            <!-- Right -->
+                            <polygon points="28,0 15,-6 15,6" />
+                            <!-- Bottom-right -->
+                            <polygon points="20,20 14,2 11,9" />
+                            <!-- Bottom -->
+                            <polygon points="0,28 -6,15 6,15" />
+                            <!-- Bottom-left -->
+                            <polygon points="-20,20 -11,9 -14,2" />
+                            <!-- Left -->
+                            <polygon points="-28,0 -15,6 -15,-6" />
+                            <!-- Top-left -->
+                            <polygon points="-20,-20 -14,-2 -11,-9" />
+                        </g>
                         
-                        <!-- Diamond shape in center -->
-                        <polygon points="125,20 155,60 125,100 95,60" fill="#D4AF37"/>
-                        
-                        <!-- Inner decorative pattern -->
-                        <circle cx="125" cy="60" r="15" fill="#1a3a7a"/>
-                        <circle cx="125" cy="60" r="10" fill="#D4AF37"/>
+                        <!-- Center accent -->
+                        <circle cx="0" cy="0" r="18" fill="#0d2550"/>
+                        <circle cx="0" cy="0" r="12" fill="url(#goldGrad)"/>
+                        <circle cx="0" cy="0" r="6" fill="#1a3a7a"/>
                     </g>
                     
-                    <!-- Company text -->
-                    <text x="125" y="130" font-family="Georgia, serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#1a3a7a" letter-spacing="2">
+                    <!-- Fireworks particle effect -->
+                    <g class="spark" opacity="0.6">
+                        <circle cx="50" cy="20" r="2" fill="#FFD700"/>
+                        <circle cx="70" cy="10" r="2" fill="#D4AF37"/>
+                        <circle cx="50" cy="80" r="2" fill="#FFD700"/>
+                        <circle cx="70" cy="85" r="2" fill="#D4AF37"/>
+                    </g>
+                    
+                    <!-- Company Name -->
+                    <text x="160" y="55" font-family="Arial, sans-serif" font-size="20" font-weight="900" fill="#1a3a7a" letter-spacing="1">
                         SUBHARAMBH
                     </text>
                 </svg>
