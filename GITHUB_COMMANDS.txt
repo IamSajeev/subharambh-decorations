@@ -1,0 +1,203 @@
+# 🚀 COPY-PASTE COMMANDS FOR GITHUB PUSH
+
+## ⚠️ IMPORTANT: BEFORE YOU RUN THESE!
+
+1. **Create GitHub account** at [github.com](https://github.com) (5 minutes)
+2. **Create public repository** named `subharambh-decorations` (2 minutes)
+3. **Replace YOUR_USERNAME** with your actual GitHub username in the commands below
+
+---
+
+## 📋 QUICK CHECKLIST
+
+✅ GitHub account created?
+✅ Repository created and PUBLIC?
+✅ You have your GitHub username ready?
+
+If yes to all three, continue below...
+
+---
+
+## 🔧 COMMANDS TO RUN IN POWERSHELL
+
+### Step 1: Copy the command below and paste into PowerShell
+
+```powershell
+cd c:\Users\sajee\subharambh-decorations
+```
+
+Press Enter.
+
+---
+
+### Step 2: Run this (to set main branch)
+
+```powershell
+git branch -M main
+```
+
+Press Enter.
+
+---
+
+### Step 3: Run this (IMPORTANT: Replace YOUR_USERNAME!)
+
+**Before you run, replace `YOUR_USERNAME` with your GitHub username!**
+
+Example: If your username is "john-smith", use: `john-smith`
+
+```powershell
+git remote add origin https://github.com/YOUR_USERNAME/subharambh-decorations.git
+```
+
+Press Enter.
+
+---
+
+### Step 4: Verify the remote was added
+
+```powershell
+git remote -v
+```
+
+Press Enter.
+
+Should show:
+```
+origin  https://github.com/YOUR_USERNAME/subharambh-decorations.git (fetch)
+origin  https://github.com/YOUR_USERNAME/subharambh-decorations.git (push)
+```
+
+---
+
+### Step 5: Add all files
+
+```powershell
+git add .
+```
+
+Press Enter.
+
+---
+
+### Step 6: Commit with message
+
+```powershell
+git commit -m "Initial commit - Subharambh Decorations professional website"
+```
+
+Press Enter.
+
+---
+
+### Step 7: Push to GitHub (FIRST TIME ONLY)
+
+```powershell
+git push -u origin main
+```
+
+Press Enter.
+
+**May ask for GitHub username & password** (or Personal Access Token).
+
+---
+
+### Step 8: Verify success
+
+```powershell
+git log --oneline -n 5
+```
+
+Press Enter.
+
+Should show your commit.
+
+---
+
+## ✅ AFTER PUSH IS COMPLETE
+
+### Check on GitHub:
+1. Go to `github.com/YOUR_USERNAME/subharambh-decorations`
+2. You should see all your files
+3. Refresh if needed
+
+### Enable GitHub Pages:
+1. Click **Settings**
+2. Click **Pages** (left sidebar)
+3. Select Branch: **main**
+4. Select Folder: **/ (root)**
+5. Click **Save**
+6. Wait 1-2 minutes
+7. Your website will be live! 🎉
+
+---
+
+## 🌐 YOUR WEBSITE URL
+
+Your website will be at:
+
+```
+https://YOUR_USERNAME.github.io/subharambh-decorations/
+```
+
+---
+
+## 🔄 FUTURE UPDATES (EASY!)
+
+After initial push, updating is simple:
+
+```powershell
+# Make your changes
+git add .
+git commit -m "Updated gallery"
+git push
+
+# Done! Website updates automatically in 1-2 minutes
+```
+
+---
+
+## 📝 EXAMPLE WALKTHROUGH
+
+### If your GitHub username is: `john-smith`
+
+**Step 3 becomes:**
+```powershell
+git remote add origin https://github.com/john-smith/subharambh-decorations.git
+```
+
+**Your website URL will be:**
+```
+https://john-smith.github.io/subharambh-decorations/
+```
+
+---
+
+## 🆘 QUICK TROUBLESHOOTING
+
+### "fatal: not a git repository"
+→ Run: `cd c:\Users\sajee\subharambh-decorations`
+
+### "Repository not found"
+→ Check your GitHub username spelling in the URL
+
+### "Authentication failed"
+→ Use Personal Access Token instead of GitHub password
+→ Or use GitHub Desktop app (easier!)
+
+### "Please tell me who you are"
+→ Run these once:
+```powershell
+git config --global user.name "Your Name"
+git config --global user.email "your.email@gmail.com"
+```
+
+---
+
+## ✨ YOU'RE ALL SET!
+
+Copy the commands, follow the steps, and your website will be live on GitHub Pages in minutes! 🚀
+
+---
+
+**Questions?** See `GITHUB_PAGES_SETUP.md` or `DEPLOYMENT_CHECKLIST.md` for detailed help.
