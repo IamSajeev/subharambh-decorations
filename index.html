@@ -20,89 +20,78 @@
     <header class="header">
         <div class="container">
             <div class="logo-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 100" class="logo-img" style="height: 75px; width: auto;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 120" class="logo-img" style="height: 80px; width: auto;">
                     <defs>
-                        <radialGradient id="goldGrad" cx="50%" cy="50%" r="50%">
+                        <linearGradient id="royalGold" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
-                        </radialGradient>
-                        <filter id="glow">
-                            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                            <feMerge>
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
+                            <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="shadow">
+                            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.3"/>
                         </filter>
                         <style>
-                            @keyframes burst {
-                                0% { r: 15px; opacity: 1; }
-                                100% { r: 45px; opacity: 0; }
-                            }
-                            @keyframes spin {
+                            @keyframes rotate {
                                 0% { transform: rotate(0deg); }
                                 100% { transform: rotate(360deg); }
                             }
-                            @keyframes floatBurst {
-                                0%, 100% { opacity: 0.3; }
-                                50% { opacity: 1; }
+                            @keyframes pulse-glow {
+                                0%, 100% { opacity: 0.4; }
+                                50% { opacity: 0.8; }
                             }
-                            .firework-burst { animation: burst 1.2s ease-out infinite; }
-                            .logo-icon { animation: spin 8s linear infinite; }
-                            .spark { animation: floatBurst 2s ease-in-out infinite; }
+                            .spark-ring { animation: rotate 12s linear infinite; }
+                            .fireworks { animation: pulse-glow 2s ease-in-out infinite; }
                         </style>
                     </defs>
                     
-                    <!-- Fireworks effect bursts at corners -->
-                    <g class="spark" opacity="0.5">
-                        <circle cx="15" cy="15" r="3" fill="#D4AF37"/>
-                        <circle cx="335" cy="15" r="3" fill="#D4AF37"/>
-                        <circle cx="15" cy="85" r="3" fill="#D4AF37"/>
-                        <circle cx="335" cy="85" r="3" fill="#D4AF37"/>
+                    <!-- Background fireworks glow -->
+                    <g class="fireworks" opacity="0.3">
+                        <circle cx="25" cy="25" r="12" fill="#FFD700"/>
+                        <circle cx="355" cy="25" r="12" fill="#FFD700"/>
+                        <circle cx="25" cy="95" r="12" fill="#FFD700"/>
+                        <circle cx="355" cy="95" r="12" fill="#FFD700"/>
                     </g>
                     
-                    <!-- Main Logo Icon - Bold Peacock/Sun inspired -->
-                    <g class="logo-icon" transform="translate(35, 50)">
-                        <!-- Main body circle -->
-                        <circle cx="0" cy="0" r="28" fill="#1a3a7a" filter="url(#glow)"/>
+                    <!-- Elegant shield/crest background -->
+                    <g filter="url(#shadow)">
+                        <!-- Main shield shape -->
+                        <path d="M 65 25 L 95 25 L 95 55 Q 80 70 65 75 Q 50 70 50 55 L 50 25 Q 57.5 15 65 15" 
+                              fill="#1a3a7a" stroke="url(#royalGold)" stroke-width="2"/>
                         
-                        <!-- Decorative petals/rays - 8 pointed star design -->
-                        <g fill="url(#goldGrad)">
-                            <!-- Top -->
-                            <polygon points="0,-28 -6,-15 6,-15" />
-                            <!-- Top-right -->
-                            <polygon points="20,-20 11,-9 14,-2" />
-                            <!-- Right -->
-                            <polygon points="28,0 15,-6 15,6" />
-                            <!-- Bottom-right -->
-                            <polygon points="20,20 14,2 11,9" />
-                            <!-- Bottom -->
-                            <polygon points="0,28 -6,15 6,15" />
-                            <!-- Bottom-left -->
-                            <polygon points="-20,20 -11,9 -14,2" />
-                            <!-- Left -->
-                            <polygon points="-28,0 -15,6 -15,-6" />
-                            <!-- Top-left -->
-                            <polygon points="-20,-20 -14,-2 -11,-9" />
+                        <!-- Shield ornament - decorative top -->
+                        <circle cx="65" cy="20" r="8" fill="url(#royalGold)"/>
+                        <circle cx="65" cy="20" r="5" fill="#1a3a7a"/>
+                        
+                        <!-- Inner decorative elements -->
+                        <g fill="url(#royalGold)">
+                            <polygon points="65,35 60,45 70,45" opacity="0.9"/>
+                            <circle cx="65" cy="55" r="4" opacity="0.8"/>
                         </g>
-                        
-                        <!-- Center accent -->
-                        <circle cx="0" cy="0" r="18" fill="#0d2550"/>
-                        <circle cx="0" cy="0" r="12" fill="url(#goldGrad)"/>
-                        <circle cx="0" cy="0" r="6" fill="#1a3a7a"/>
                     </g>
                     
-                    <!-- Fireworks particle effect -->
-                    <g class="spark" opacity="0.6">
-                        <circle cx="35" cy="20" r="2" fill="#FFD700"/>
-                        <circle cx="60" cy="10" r="2" fill="#D4AF37"/>
-                        <circle cx="35" cy="80" r="2" fill="#FFD700"/>
-                        <circle cx="60" cy="90" r="2" fill="#D4AF37"/>
+                    <!-- Rotating decorative ring around shield -->
+                    <circle cx="65" cy="50" r="32" fill="none" stroke="url(#royalGold)" stroke-width="1.5" 
+                            stroke-dasharray="5,3" class="spark-ring" opacity="0.5"/>
+                    
+                    <!-- Corner firework stars (subtle) -->
+                    <g class="fireworks" opacity="0.5">
+                        <polygon points="20,20 22,25 27,25 23,28 25,33 20,30 15,33 17,28 13,25 18,25" fill="#FFD700"/>
+                        <polygon points="350,20 352,25 357,25 353,28 355,33 350,30 345,33 347,28 343,25 348,25" fill="#FFD700"/>
                     </g>
                     
-                    <!-- Company Name - with proper spacing -->
-                    <text x="85" y="58" font-family="Arial, sans-serif" font-size="26" font-weight="900" fill="#1a3a7a" letter-spacing="0">
+                    <!-- Company Name - Primary -->
+                    <text x="120" y="45" font-family="Georgia, serif" font-size="32" font-weight="bold" 
+                          fill="#1a3a7a" letter-spacing="2">
                         SUBHARAMBH
                     </text>
+                    
+                    <!-- Company Service - Secondary -->
+                    <text x="120" y="68" font-family="Georgia, serif" font-size="14" font-weight="normal" 
+                          fill="#B8860B" letter-spacing="1.5">
+                        DECORATIONS
+                    </text>
+                    
+                    <!-- Decorative bottom line -->
+                    <line x1="120" y1="75" x2="360" y2="75" stroke="url(#royalGold)" stroke-width="2" opacity="0.6"/>
                 </svg>
             </div>
             <nav class="nav">
