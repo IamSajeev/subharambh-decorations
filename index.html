@@ -20,11 +20,63 @@
     <header class="header">
         <div class="container">
             <div class="logo-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 100" class="logo-img" style="height: 70px; width: auto;">
-                    <rect width="250" height="100" fill="#F9F7F4" rx="8"/>
-                    <rect x="0" y="0" width="3" height="100" fill="#D4AF37"/>
-                    <text x="70" y="50" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#3E2723">SUBHARAMBH</text>
-                    <text x="70" y="75" font-family="Georgia, serif" font-size="10" fill="#D4AF37" letter-spacing="1">DECORATIONS</text>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 120" class="logo-img" style="height: 75px; width: auto;">
+                    <defs>
+                        <linearGradient id="bluegold" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#1a3a7a;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
+                        </linearGradient>
+                        <style>
+                            @keyframes pulse {
+                                0%, 100% { transform: scale(1); }
+                                50% { transform: scale(1.1); }
+                            }
+                            @keyframes rotate {
+                                0% { transform: rotate(0deg); }
+                                100% { transform: rotate(360deg); }
+                            }
+                            @keyframes shimmer {
+                                0%, 100% { opacity: 0.8; }
+                                50% { opacity: 1; }
+                            }
+                            .logo-main { animation: pulse 2s infinite; }
+                            .logo-ring { animation: rotate 4s linear infinite; }
+                            .logo-glow { animation: shimmer 1.5s infinite; }
+                        </style>
+                    </defs>
+                    
+                    <!-- Fireworks background circles -->
+                    <g class="logo-glow" opacity="0.6">
+                        <circle cx="30" cy="30" r="15" fill="#D4AF37" opacity="0.3"/>
+                        <circle cx="220" cy="30" r="15" fill="#D4AF37" opacity="0.3"/>
+                        <circle cx="30" cy="90" r="15" fill="#D4AF37" opacity="0.3"/>
+                        <circle cx="220" cy="90" r="15" fill="#D4AF37" opacity="0.3"/>
+                    </g>
+                    
+                    <!-- Decorative ring -->
+                    <circle cx="125" cy="60" r="55" fill="none" stroke="url(#bluegold)" stroke-width="3" class="logo-ring"/>
+                    
+                    <!-- Main logo shape with animation -->
+                    <g class="logo-main">
+                        <!-- Background circle -->
+                        <circle cx="125" cy="60" r="50" fill="#1a3a7a"/>
+                        <circle cx="125" cy="60" r="48" fill="#0d2550"/>
+                        
+                        <!-- Gold accent circle -->
+                        <circle cx="125" cy="60" r="45" fill="none" stroke="#D4AF37" stroke-width="2"/>
+                        
+                        <!-- Diamond shape in center -->
+                        <polygon points="125,20 155,60 125,100 95,60" fill="#D4AF37"/>
+                        
+                        <!-- Inner decorative pattern -->
+                        <circle cx="125" cy="60" r="15" fill="#1a3a7a"/>
+                        <circle cx="125" cy="60" r="10" fill="#D4AF37"/>
+                    </g>
+                    
+                    <!-- Company text -->
+                    <text x="125" y="130" font-family="Georgia, serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#1a3a7a" letter-spacing="2">
+                        SUBHARAMBH
+                    </text>
                 </svg>
             </div>
             <nav class="nav">

@@ -41,6 +41,34 @@ body {
     padding: 0 20px;
 }
 
+/* ========== LOGO ANIMATIONS WITH FIREWORKS ========== */
+.logo-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+@keyframes firework-burst {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty)) scale(0);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.logo-img {
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.6));
+    animation: sparkle 1s infinite;
+}
+
 /* ========== ANIMATED BALLOONS BACKGROUND ========== */
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
