@@ -63,9 +63,10 @@ body {
 }
 
 .logo-img {
-    height: 50px;
+    height: 60px;
     width: auto;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .logo-img:hover {
@@ -73,10 +74,7 @@ body {
 }
 
 .logo-text {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--dark);
-    letter-spacing: -0.5px;
+    display: none;
 }
 
 .nav {
